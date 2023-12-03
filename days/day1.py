@@ -1,6 +1,11 @@
-def part1(nums):
+def part1(file):
+    with open(file, 'r') as f:
+        txt_nums = f.readlines()
+
+    txt_nums = list(map(lambda s : s.replace('\n', ''), txt_nums))
+
     list_of_nums = []
-    for code in nums:
+    for code in txt_nums:
         temp = ""
         # check if the character is a valid number
         # pt 2 also check if the string is a valid number
@@ -16,9 +21,14 @@ def part1(nums):
         list_of_nums.append(int(temp))
     return list_of_nums
 
-def part2(nums):
+def part2(file):
+    with open(file, 'r') as f:
+        txt_nums = f.readlines()
+
+    txt_nums = list(map(lambda s : s.replace('\n', ''), txt_nums))
+
     list_of_nums = []
-    for code in nums:
+    for code in txt_nums:
         temp = ""
         # check if the character is a valid number
         # pt 2 also check if the string is a valid number

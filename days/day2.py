@@ -1,7 +1,12 @@
-def part_one(games):
+def part_one(file):
+    with open(file, 'r') as f:
+        txt_games = f.readlines()
+
+    txt_games = list(map(lambda s : s.replace('\n', ''), txt_games))
+
     list_of_valid_games = []
-    # part one
-    for game in games:
+    
+    for game in txt_games:
         # split the games and also find the id
         rounds = game.split(";")
         temp = rounds[0].split(":")
@@ -28,9 +33,14 @@ def part_one(games):
             list_of_valid_games.append(int(game_id))
     return list_of_valid_games
 
-def part_two(games):
+def part_two(file):
+    with open(file, 'r') as f:
+        txt_games = f.readlines()
+
+    txt_games = list(map(lambda s : s.replace('\n', ''), txt_games))
     multiple_of_maxes = []
-    for game in games:
+    
+    for game in txt_games:
         # split the games and also find the id
         rounds = game.split(";")
         temp = rounds[0].split(":")
